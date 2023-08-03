@@ -13,7 +13,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-You can use the **Upload Artifacts to S3** step in your CI pipelines to upload artifacts to AWS or other S3 providers, such as [MinIO](https://min.io/product/s3-compatibility). Harness CI also provides steps to [upload artifacts to GCS](./upload-artifacts-to-gcs-step-settings.md) and [upload artifacts to JFrog](./upload-artifacts-to-jfrog.md).
+You can use the **Upload Artifacts to S3** step in your CI pipelines to upload artifacts to AWS or other S3 providers, such as [MinIO](https://min.io/product/s3-compatibility). You can also [upload artifacts to GCS](./upload-artifacts-to-gcs-step-settings.md), [upload artifacts to JFrog](./upload-artifacts-to-jfrog.md), and [upload artifacts to Sonatype Nexus](./upload-artifacts-to-sonatype-nexus.md).
 
 :::tip S3 Upload and Publish plugin
 
@@ -31,7 +31,7 @@ If you haven't created a pipeline before, try one of the [CI tutorials](../../ci
 
 ## Prepare artifacts to upload
 
-Add steps to your pipeline that generate artifacts to upload, such as [Run steps](../set-up-test-intelligence/configure-run-tests-step-settings.md). The steps you use depend on what artifacts you ultimately want to upload.
+Add steps to your pipeline that generate artifacts to upload, such as [Run steps](../run-ci-scripts/run-step-settings.md). The steps you use depend on what artifacts you ultimately want to upload.
 
 ## Upload artifacts to S3
 
@@ -93,7 +93,9 @@ The name of the S3 bucket name where you want to upload the artifact.
 
 ### Source Path
 
-Path to the artifact file/folder that you want to upload. Harness creates the compressed file automatically.
+Path to the artifact file/folder that you want to upload.
+
+If you want to upload a compressed file, you must use a [Run step](../run-ci-scripts/run-step-settings.md) to compress the artifact before uploading it.
 
 ### Endpoint URL
 
@@ -103,7 +105,7 @@ Endpoint URL for S3-compatible providers. This setting is not needed for AWS.
 
 The path, relative to the S3 **Bucket**, where you want to store the artifact. Do not include the bucket name; you specified this in **Bucket**.
 
-If no path is specified, the cache is saved to `[bucket]/[key]`.
+If no path is specified, the artifact is saved to `[bucket]/[key]`.
 
 ### Run as User
 
@@ -133,7 +135,7 @@ After the **Upload Artifacts to S3** step runs, you can see the uploaded artifac
 
 ## View artifacts on the Artifacts tab
 
-As an alternative to manually finding artifacts on S3, you can use [Drone plugins](../use-drone-plugins/explore-ci-plugins.md) to view code coverage reports on the **Artifacts** tab on the [Build details page](../viewing-builds.md).
+As an alternative to manually finding artifacts on S3, you can use [Drone plugins](../use-drone-plugins/explore-ci-plugins.md) to view artifacts on the **Artifacts** tab on the [Build details page](../viewing-builds.md).
 
 ```mdx-code-block
 <Tabs>
