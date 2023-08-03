@@ -228,6 +228,10 @@ Harness Kubernetes deployments allow you to use your own Kubernetes manifests o
 
 Harness Kubernetes deployments also support all deployment strategies (canary, blue/green, rolling, and so on).
 
+#### Can I use multiple Helm versions newer than 3.1.2 in a pipeline? 
+
+Yes, Harness Supports this. Harness support team can enable a feature flag that allows for newer versions of Helm as well as multiple versions in a single pipeline. 
+
 #### Should I use Kubernetes or Native Helm?
 
 Harness includes both Kubernetes and Helm deployments, and you can use Helm charts in both. Here's the difference:
