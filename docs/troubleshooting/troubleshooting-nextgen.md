@@ -43,6 +43,7 @@ If you cannot find a resolution, please contact [Harness Support](mailto:suppor
   - [Harness SecretStore is not able to encrypt/decrypt](#harness-secretstore-is-not-able-to-encryptdecrypt)
   - [You are not authorized to perform this operation: AmazonEC2: Status code 403](#you-are-not-authorized-to-perform-this-operation-amazonec2-status-code-403)
   - [Git-upload-pack not permitted](#git-upload-pack-not-permitted)
+  - [Some expressions couldn't be evaluated: pipeline.variable.image_name)
 - [Naming conventions](#naming-conventions)
 - [Secrets](#secrets)
   - [Secrets values hidden In log output](#secrets-values-hidden-in-log-output)
@@ -322,7 +323,9 @@ One possible cause of this error is if you are using a personal access token (PA
 
 To use a personal access token with a GitHub organization that uses SAML single sign-on (SSO), you must first authorize the token. See [Authorizing a personal access token for use with SAML single sign-on](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on) from GitHub.
 
+#### Some expression couldn't be evaluated: pipeline.variables.image_name
 
+This is most likely occuring due to the variable being referenced in the values.yaml file. 
 ```
 org.eclipse.jgit.api.errors.TransportException: https://github.com/*******/*******: git-upload-pack not permitted on 'https://github.com/*******/*******/'
 ```

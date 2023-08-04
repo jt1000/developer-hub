@@ -1,6 +1,6 @@
 ---
 title: What's new
-date: 2023-08-02T10:00
+date: 2023-08-04T10:00
 sidebar_position: 1
 ---
 ```mdx-code-block
@@ -18,9 +18,63 @@ Review the notes below to learn about the new features that are Generally Availa
 :::info note
 Harness deploys changes to Harness SaaS clusters on a progressive basis. This means that the features described in these release notes may not be immediately available in your cluster. To identify the cluster that hosts your account, go to the **Account Overview** page.
 :::
-## Latest - August 02, 2023
 
-### Cloud Cost Management
+## Latest - August 4, 2023
+
+### Harness Platform, version 80120
+
+- The Universal Base Image Minimal used for the Harness user interface (both FirstGen and NextGen) and the Harness NextGen authentication service has been upgraded to ubi8-minimal:8.8. This upgrade was necessitated by version 8.7 (ubi8-minimal:8.7) reaching end of life. (PL-40095)
+
+- Browser tabs did not show informative titles for the Settings, Delegates and FileStore pages. They showed only the generic title "Harness", making it difficult to identify the page you wanted. (PL-39923, ZD-46375)
+
+  This issue has been fixed. Browser tabs showing those pages now have more specific titles. 
+
+### Continuous Delivery, version 80120
+
+- Upgraded the Helm binary from version 3.8 to 3.12. (CDS-58931)
+
+  This item requires Harness Delegate version 80104. For information about features that require a specific delegate version, go to the [Delegate release notes](/release-notes/delegate).
+
+- Upgraded go-template binary to version 0.4.3, which uses go version 1.20. (CDS-58919)
+
+  This item requires Harness Delegate version 80104. For information about features that require a specific delegate version, go to the [Delegate release notes](/release-notes/delegate).
+
+- Removed Helm version 3.1 from delegates with an immutable image type (image tag `yy.mm.xxxxx`). (CDS-58892, ZD-47520, ZD-48553)
+
+  This item requires Harness Delegate version 80104. For information about features that require a specific delegate version, go to the [Delegate release notes](/release-notes/delegate).
+
+### Harness Delegate, version 80104
+
+- The Execution Logs have been enhanced to include additional details such as duration, task ID, and more. These details help you understand and debug CV Steps, SRM Live monitoring, and SLI. (OIP-565)
+
+- In manual Query mode, the Datadog Metrics Health source now provides support for formulas. (OIP-568)
+
+   These formulas follow a specific format: Query `a` ; Query `b` ; Formula using `a`, `b`.
+
+   Let's consider an example to illustrate this:
+
+   - Query `a` is "Query-with-a"
+
+   - Query `b` is "Query-with-a"
+
+   - The formula is "(a/b) * 100 - 5"
+
+   The resulting query would appear as follows: `kubernetes.memory.usage{cluster-name:chi-play};kubernetes.memory.total{cluster-name:chi-play};(a/b) * 100 - 5`
+
+   In the above example, `a` and `b` represent the respective queries:
+
+   - a = kubernetes.memory.usage{cluster-name:chi-play}
+
+   - b = kubernetes.memory.total{cluster-name:chi-play}
+
+   You can include any number of queries in the final formula using alphabetical variables, such as a, b, c, d, and so on.
+
+- Error messages from health source providers are now included in API responses for improved user experience and debugging efficiency. (OIP-657)
+
+- A new `getAzureKeyVaultClient` API is available to fetch the list of Azure vaults. This option reduces the time it takes for Harness to reflect a newly-created Azure vault. (PL-28392, ZD-44045)
+
+## August 2, 2023
+### Cloud Cost Management, version 80301
 
 * AWS AutoStopping proxy enhancement (CCM-13497)
 
@@ -58,6 +112,7 @@ Harness deploys changes to Harness SaaS clusters on a progressive basis. This me
 <summary>2023 releases</summary>
 
 #### July 31, 2023
+
 
 ##### Self-Managed Enterprise Edition, version 79819
 
