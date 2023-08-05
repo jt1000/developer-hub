@@ -67,6 +67,7 @@ If you cannot find a resolution, please contact [Harness Support](mailto:suppor
 - [Terraform](#terraform)
   - [Provisioned resources already exist (Terraform state file locked)](#provisioned-resources-already-exist-terraform-state-file-locked)
   - [TerraformValidation - Terraform validation result: false](#terraformvalidation---terraform-validation-result-false)
+  - [Unable to save Pipeline if Terraform vars contain hyphen]
 - [AWS ECS](#aws-ecs)
 - [Harness secret managers](#harness-secret-managers)
 - [SAML SSO](#saml-sso)
@@ -588,6 +589,15 @@ Harness performs the following validation when you use Terraform in a deployment
 2. Can the Harness delegate connect to the Git repo?
 
 If the Harness delegate does not have Terraform installed, you will see a log entry such as the following:
+
+#### Unable to save Pipeline if Terraform vars contain hyphen
+
+If you are trying to add environmental variables with dashes, this will not work as the shell itself won't allow it. 
+example: export TF_VAR_hello-world=foo
+
+To correct this:
+1. REname those vars
+2. Provide variable names in varFiles section
 
 
 ```
