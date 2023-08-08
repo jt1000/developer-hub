@@ -21,6 +21,7 @@ In this topic:
 * [Harness entities](continuous-delivery-faqs.md#harness-entities)
 * [Secrets management](continuous-delivery-faqs.md#secrets-management)
 * [Harness variables expressions](continuous-delivery-faqs.md#harness-variables-expressions)
+* [Deployment Rate Limit]
 
 ### General
 
@@ -879,6 +880,10 @@ See [Built-in Harness variables reference](../../platform/12_Variables-and-Expre
 Most settings in Harness pipelines allow you to use fixed values, runtime inputs, and expressions.
 
 See [Fixed values, runtime inputs, and expressions](/docs/platform/20_References/runtime-inputs.md).
+
+#### Deployment Rate limit reached. You have reached 100.0% of allowed limits for deployments in a day. Some deployments may not be allowed.
+
+Customer and our SaaS platform is limited to the number of deployments. Reaching this limit can result in deployment stoppages as well as the message mentioned above. Please note that this is done also as a safety check as we want to prevent any 'run-away' deployments. If you do see this message and are confident that the deployment limit is acceptable, please notify us immediately via our support channels and we Harness support can look at the limits more closely. 
 
 #### Can I reference settings using expressions?
 
