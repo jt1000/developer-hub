@@ -21,6 +21,7 @@ In this topic:
 * [Harness entities](continuous-delivery-faqs.md#harness-entities)
 * [Secrets management](continuous-delivery-faqs.md#secrets-management)
 * [Harness variables expressions](continuous-delivery-faqs.md#harness-variables-expressions)
+* [Deployment Freeze](Account, Org or Project level)
 
 ### General
 
@@ -875,6 +876,12 @@ See [Built-in Harness variables reference](../../platform/12_Variables-and-Expre
 Most settings in Harness pipelines allow you to use fixed values, runtime inputs, and expressions.
 
 See [Fixed values, runtime inputs, and expressions](/docs/platform/20_References/runtime-inputs.md).
+
+#### Deployment Freeze at account, org or project levels
+
+Please note that Deployment freezes aren't just restricted to the entire account level. You can set them for Org and Project levels as well. 
+
+See [https://developer.harness.io/docs/continuous-delivery/manage-deployments/deployment-freeze/]
 
 #### Can I reference settings using expressions?
 
