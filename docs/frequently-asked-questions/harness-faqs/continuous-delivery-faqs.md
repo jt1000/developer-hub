@@ -21,7 +21,11 @@ In this topic:
 * [Harness entities](continuous-delivery-faqs.md#harness-entities)
 * [Secrets management](continuous-delivery-faqs.md#secrets-management)
 * [Harness variables expressions](continuous-delivery-faqs.md#harness-variables-expressions)
+
+* [Deployment Freeze](Account, Org or Project level)
+
 * [Deployment Rate Limit]
+
 
 ### General
 
@@ -154,7 +158,7 @@ Yes, you can enable the Role permission Pipeline Execute and then apply that Rol
 
 ![](./static/continuous-delivery-faqs-02.png)
 
-See [Add and manage roles](../../platform/4_Role-Based-Access-Control/9-add-manage-roles.md).
+See [Manage roles](../../platform/role-based-access-control/add-manage-roles).
 
 #### Can I deploy a service to multiple infrastructures at the same time?
 
@@ -881,9 +885,17 @@ Most settings in Harness pipelines allow you to use fixed values, runtime inputs
 
 See [Fixed values, runtime inputs, and expressions](/docs/platform/20_References/runtime-inputs.md).
 
+
+#### Deployment Freeze at account, org or project levels
+
+Please note that Deployment freezes aren't just restricted to the entire account level. You can set them for Org and Project levels as well. 
+
+See [https://developer.harness.io/docs/continuous-delivery/manage-deployments/deployment-freeze/]
+
 #### Deployment Rate limit reached. You have reached 100.0% of allowed limits for deployments in a day. Some deployments may not be allowed.
 
 Customer and our SaaS platform is limited to the number of deployments. Reaching this limit can result in deployment stoppages as well as the message mentioned above. Please note that this is done also as a safety check as we want to prevent any 'run-away' deployments. If you do see this message and are confident that the deployment limit is acceptable, please notify us immediately via our support channels and we Harness support can look at the limits more closely. 
+
 
 #### Can I reference settings using expressions?
 
