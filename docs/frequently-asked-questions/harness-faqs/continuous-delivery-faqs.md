@@ -21,11 +21,9 @@ In this topic:
 * [Harness entities](continuous-delivery-faqs.md#harness-entities)
 * [Secrets management](continuous-delivery-faqs.md#secrets-management)
 * [Harness variables expressions](continuous-delivery-faqs.md#harness-variables-expressions)
-
+* [Looping Strategy error message](Invalid request: Could not parse the repeat strategy..)
 * [Deployment Freeze](Account, Org or Project level)
-
 * [Deployment Rate Limit]
-
 
 ### General
 
@@ -884,6 +882,11 @@ See [Built-in Harness variables reference](../../platform/12_Variables-and-Expre
 Most settings in Harness pipelines allow you to use fixed values, runtime inputs, and expressions.
 
 See [Fixed values, runtime inputs, and expressions](/docs/platform/20_References/runtime-inputs.md).
+
+
+#### Looping Strategy results in error "Invalid request: Could not parse the repeat strategy. Please ensure you are using a list of string"
+
+Typically occurs when you are trying to use a repeat strategy in a context where a list of strings is expected.
 
 
 #### Deployment Freeze at account, org or project levels
