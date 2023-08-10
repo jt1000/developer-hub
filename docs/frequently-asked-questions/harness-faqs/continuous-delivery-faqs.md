@@ -21,7 +21,8 @@ In this topic:
 * [Harness entities](continuous-delivery-faqs.md#harness-entities)
 * [Secrets management](continuous-delivery-faqs.md#secrets-management)
 * [Harness variables expressions](continuous-delivery-faqs.md#harness-variables-expressions)
-
+* [Updating SAML group](Invalid request: SSO Provider already linked to the group. Try unlinking first)
+  
 ### General
 
 For an overview of Harness' support for platforms, methodologies, and related technologies, see [Supported platforms and technologies](../../getting-started/supported-platforms-and-technologies.md).
@@ -875,6 +876,10 @@ See [Built-in Harness variables reference](../../platform/12_Variables-and-Expre
 Most settings in Harness pipelines allow you to use fixed values, runtime inputs, and expressions.
 
 See [Fixed values, runtime inputs, and expressions](/docs/platform/20_References/runtime-inputs.md).
+
+#### Unable to update SAML Group due to error message "Invalid request: SSO Provider already linked to the group. Try unlinking first"
+
+When moving SAML providers, users will return group membership in different formats. You will need to update all of your SAML-connected groups to match the new format
 
 #### Can I reference settings using expressions?
 
