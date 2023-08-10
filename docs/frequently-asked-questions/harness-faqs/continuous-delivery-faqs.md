@@ -21,6 +21,8 @@ In this topic:
 * [Harness entities](continuous-delivery-faqs.md#harness-entities)
 * [Secrets management](continuous-delivery-faqs.md#secrets-management)
 * [Harness variables expressions](continuous-delivery-faqs.md#harness-variables-expressions)
+* [Updating SAML group](Invalid request: SSO Provider already linked to the group. Try unlinking first)
+
 * [Looping Strategy error message](Invalid request: Could not parse the repeat strategy..)
 * [Deployment Freeze](Account, Org or Project level)
 * [Deployment Rate Limit]
@@ -883,6 +885,9 @@ Most settings in Harness pipelines allow you to use fixed values, runtime inputs
 
 See [Fixed values, runtime inputs, and expressions](/docs/platform/20_References/runtime-inputs.md).
 
+#### Unable to update SAML Group due to error message "Invalid request: SSO Provider already linked to the group. Try unlinking first"
+
+When moving SAML providers, users will return group membership in different formats. You will need to update all of your SAML-connected groups to match the new format
 
 #### Looping Strategy results in error "Invalid request: Could not parse the repeat strategy. Please ensure you are using a list of string"
 
@@ -898,6 +903,7 @@ See [https://developer.harness.io/docs/continuous-delivery/manage-deployments/de
 #### Deployment Rate limit reached. You have reached 100.0% of allowed limits for deployments in a day. Some deployments may not be allowed.
 
 Customer and our SaaS platform is limited to the number of deployments. Reaching this limit can result in deployment stoppages as well as the message mentioned above. Please note that this is done also as a safety check as we want to prevent any 'run-away' deployments. If you do see this message and are confident that the deployment limit is acceptable, please notify us immediately via our support channels and we Harness support can look at the limits more closely. 
+
 
 
 #### Can I reference settings using expressions?
