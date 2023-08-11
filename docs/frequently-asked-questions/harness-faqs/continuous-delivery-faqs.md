@@ -22,7 +22,12 @@ In this topic:
 * [Secrets management](continuous-delivery-faqs.md#secrets-management)
 * [Harness variables expressions](continuous-delivery-faqs.md#harness-variables-expressions)
 * [Pipeline shows success even with exit code 0]
-  
+* [Updating SAML group](Invalid request: SSO Provider already linked to the group. Try unlinking first)
+* [Looping Strategy error message](Invalid request: Could not parse the repeat strategy..)
+* [Deployment Freeze](Account, Org or Project level)
+* [Deployment Rate Limit]
+
+
 ### General
 
 For an overview of Harness' support for platforms, methodologies, and related technologies, see [Supported platforms and technologies](../../getting-started/supported-platforms-and-technologies.md).
@@ -228,6 +233,10 @@ Harness supports Helm charts in its Kubernetes implementation.
 Harness Kubernetes deployments allow you to use your own Kubernetes manifests or a Helm chart, and Harness executes the Kubernetes API calls to build everything without Helm and Tiller needing to be installed in the target cluster.
 
 Harness Kubernetes deployments also support all deployment strategies (canary, blue/green, rolling, and so on).
+
+#### Can I use multiple Helm versions newer than 3.1.2 in a pipeline? 
+
+Yes, Harness Supports this. Harness support team can enable a feature flag that allows for newer versions of Helm as well as multiple versions in a single pipeline. 
 
 #### Should I use Kubernetes or Native Helm?
 
@@ -877,9 +886,31 @@ Most settings in Harness pipelines allow you to use fixed values, runtime inputs
 
 See [Fixed values, runtime inputs, and expressions](/docs/platform/20_References/runtime-inputs.md).
 
+
 #### Pipeline shows success even with exit code 0
 
 Harness pipeline succeeds even with an exit code 0. Harness relies on the OS to mark the success or failure of a script. In some cases an exit code 0 returned, it implies successful execution of a script and Harness will mark the script as success. 
+
+#### Unable to update SAML Group due to error message "Invalid request: SSO Provider already linked to the group. Try unlinking first"
+
+When moving SAML providers, users will return group membership in different formats. You will need to update all of your SAML-connected groups to match the new format
+
+#### Looping Strategy results in error "Invalid request: Could not parse the repeat strategy. Please ensure you are using a list of string"
+
+Typically occurs when you are trying to use a repeat strategy in a context where a list of strings is expected.
+
+
+#### Deployment Freeze at account, org or project levels
+
+Please note that Deployment freezes aren't just restricted to the entire account level. You can set them for Org and Project levels as well. 
+
+See [https://developer.harness.io/docs/continuous-delivery/manage-deployments/deployment-freeze/]
+
+#### Deployment Rate limit reached. You have reached 100.0% of allowed limits for deployments in a day. Some deployments may not be allowed.
+
+Customer and our SaaS platform is limited to the number of deployments. Reaching this limit can result in deployment stoppages as well as the message mentioned above. Please note that this is done also as a safety check as we want to prevent any 'run-away' deployments. If you do see this message and are confident that the deployment limit is acceptable, please notify us immediately via our support channels and we Harness support can look at the limits more closely. 
+
+
 
 #### Can I reference settings using expressions?
 

@@ -85,3 +85,7 @@ You can run Docker-in-Docker (DinD) as a service with the `sharedPaths` set to `
 The DinD service does not connect to the Kubernetes node daemon. It launches a new Docker daemon on the pod, and then other containers use that Docker daemon to run their commands.
 
 For details, go to [Run Docker-in-Docker in a Build stage](/docs/continuous-integration/use-ci/run-ci-scripts/run-docker-in-docker-in-a-ci-stage.md).
+
+## Bitbucket SSH support
+
+For Bitbucket repos, Harness does support ECDSA or Ed25519 keys. 

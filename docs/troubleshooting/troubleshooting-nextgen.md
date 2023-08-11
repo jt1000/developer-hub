@@ -43,6 +43,9 @@ If you cannot find a resolution, please contact [Harness Support](mailto:suppor
   - [Harness SecretStore is not able to encrypt/decrypt](#harness-secretstore-is-not-able-to-encryptdecrypt)
   - [You are not authorized to perform this operation: AmazonEC2: Status code 403](#you-are-not-authorized-to-perform-this-operation-amazonec2-status-code-403)
   - [Git-upload-pack not permitted](#git-upload-pack-not-permitted)
+  - [Using <+codebase.gitUser> results in "None" when using shell for Run step)
+  - [Some expressions couldn't be evaluated: pipeline.variable.image_name)
+
 - [Naming conventions](#naming-conventions)
 - [Secrets](#secrets)
   - [Secrets values hidden In log output](#secrets-values-hidden-in-log-output)
@@ -65,6 +68,7 @@ If you cannot find a resolution, please contact [Harness Support](mailto:suppor
 - [Terraform](#terraform)
   - [Provisioned resources already exist (Terraform state file locked)](#provisioned-resources-already-exist-terraform-state-file-locked)
   - [TerraformValidation - Terraform validation result: false](#terraformvalidation---terraform-validation-result-false)
+  - [Unable to save Pipeline if Terraform vars contain hyphen]
 - [AWS ECS](#aws-ecs)
 - [Harness secret managers](#harness-secret-managers)
 - [SAML SSO](#saml-sso)
@@ -324,6 +328,14 @@ One possible cause of this error is if you are using a personal access token (PA
 To use a personal access token with a GitHub organization that uses SAML single sign-on (SSO), you must first authorize the token. See [Authorizing a personal access token for use with SAML single sign-on](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on) from GitHub.
 
 
+#### Using <+codebase.gitUser> results in "None" when using shell during Run Step
+
+The codebase variable will need to be populated correctly. 
+
+#### Some expression couldn't be evaluated: pipeline.variables.image_name
+
+
+This is most likely occuring due to the variable being referenced in the values.yaml file. 
 ```
 org.eclipse.jgit.api.errors.TransportException: https://github.com/*******/*******: git-upload-pack not permitted on 'https://github.com/*******/*******/'
 ```
@@ -578,6 +590,15 @@ Harness performs the following validation when you use Terraform in a deployment
 2. Can the Harness delegate connect to the Git repo?
 
 If the Harness delegate does not have Terraform installed, you will see a log entry such as the following:
+
+#### Unable to save Pipeline if Terraform vars contain hyphen
+
+If you are trying to add environmental variables with dashes, this will not work as the shell itself won't allow it. 
+example: export TF_VAR_hello-world=foo
+
+To correct this:
+1. REname those vars
+2. Provide variable names in varFiles section
 
 
 ```
