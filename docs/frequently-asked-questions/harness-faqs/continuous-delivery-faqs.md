@@ -21,7 +21,8 @@ In this topic:
 * [Harness entities](continuous-delivery-faqs.md#harness-entities)
 * [Secrets management](continuous-delivery-faqs.md#secrets-management)
 * [Harness variables expressions](continuous-delivery-faqs.md#harness-variables-expressions)
-
+* [Pipeline shows success even with exit code 0]
+  
 ### General
 
 For an overview of Harness' support for platforms, methodologies, and related technologies, see [Supported platforms and technologies](../../getting-started/supported-platforms-and-technologies.md).
@@ -875,6 +876,10 @@ See [Built-in Harness variables reference](../../platform/12_Variables-and-Expre
 Most settings in Harness pipelines allow you to use fixed values, runtime inputs, and expressions.
 
 See [Fixed values, runtime inputs, and expressions](/docs/platform/20_References/runtime-inputs.md).
+
+#### Pipeline shows success even with exit code 0
+
+Harness pipeline succeeds even with an exit code 0. Harness relies on the OS to mark the success or failure of a script. In some cases an exit code 0 returned, it implies successful execution of a script and Harness will mark the script as success. 
 
 #### Can I reference settings using expressions?
 
