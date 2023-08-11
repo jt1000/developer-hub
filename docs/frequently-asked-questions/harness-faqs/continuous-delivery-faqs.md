@@ -21,6 +21,7 @@ In this topic:
 * [Harness entities](continuous-delivery-faqs.md#harness-entities)
 * [Secrets management](continuous-delivery-faqs.md#secrets-management)
 * [Harness variables expressions](continuous-delivery-faqs.md#harness-variables-expressions)
+* [Pipeline showing success, even after exit code 0]
 
 ### General
 
@@ -332,6 +333,10 @@ You can use canary, rolling, and blue/green. See:
 #### Can I select namespaces during deployment?
 
 Yes. You can select namespaces on the fly using Harness variables that are evaluated at runtime.
+
+#### Pipeline showing success, even after exit code 0
+
+Harness relies on the operating system code to mark success or failure for a script. In some cases, the OS may return a status code 0. Which would imply success. Please run the script outside of Harness and determine what the script returns. 
 
 #### Do you support Kustomize?
 
