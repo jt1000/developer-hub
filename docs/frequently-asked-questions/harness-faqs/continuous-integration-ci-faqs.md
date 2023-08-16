@@ -85,3 +85,11 @@ You can run Docker-in-Docker (DinD) as a service with the `sharedPaths` set to `
 The DinD service does not connect to the Kubernetes node daemon. It launches a new Docker daemon on the pod, and then other containers use that Docker daemon to run their commands.
 
 For details, go to [Run Docker-in-Docker in a Build stage](/docs/continuous-integration/use-ci/run-ci-scripts/run-docker-in-docker-in-a-ci-stage.md).
+
+## How to setup Harness Cloud build infrastructure
+
+Harness Cloud Infrastructure can be a useful tool to quickly setup Harness CI pipeline and also quickly setup production pipelines. Testing on CI cloud can be a useful tool. 
+
+For details, go to [https://developer.harness.io/docs/continuous-integration/use-ci/set-up-build-infrastructure/use-harness-cloud-build-infrastructure/]
+
+
