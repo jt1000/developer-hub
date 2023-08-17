@@ -305,6 +305,10 @@ You can use your Git repo for the configuration files in **Manifests** and Har
 Remote files can also use Go templating.
 :::
 
+#### Can I migrate the pipeline from a migrated repo, if the old repo where the pipeline was defined is locked and you can't make commits?
+
+Yes, you can use the clone feature in the pipeline view from your existing pipeline and clone to a new GitHub connector and path. 
+
 #### Do you support Go templating for Kubernetes manifests?
 
 Yes. you can use [Go templating](https://godoc.org/text/template) and Harness built-in variables in combination in your **Manifests** files.
