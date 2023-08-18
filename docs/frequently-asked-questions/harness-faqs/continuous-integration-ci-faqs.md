@@ -85,3 +85,7 @@ You can run Docker-in-Docker (DinD) as a service with the `sharedPaths` set to `
 The DinD service does not connect to the Kubernetes node daemon. It launches a new Docker daemon on the pod, and then other containers use that Docker daemon to run their commands.
 
 For details, go to [Run Docker-in-Docker in a Build stage](/docs/continuous-integration/use-ci/run-ci-scripts/run-docker-in-docker-in-a-ci-stage.md).
+
+## Harness expression evaluation and cloned Git repositories
+
+It is important to note that when you have a Harness expression in a file located on Git repository, these expressions will not get rendered even if you clone the repository and make the json file available to the step container. 
